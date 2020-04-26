@@ -9,21 +9,25 @@
 //TODO:
 // 	- Need to generate the game board with elements of the game
 //  - Need to create the deck class
-//  - Need to put player's positions in the Player class
+//  - Figure out how to make players move
+//  - Might need to take the position initialization out of the Player constructor, because it would be cleaner to do it in initBoard()
 
 // <iostream> is in Player.h
-#include "Player.h"
+// "Player.h" is in "Board.h"
 #include "Board.h"
 
 int main() {
 
-	Player player1, player2;
+	Player player1("x",0,1), player2("o",14,0);
 	Board gameBoard;
 	gameBoard.initBoard();
 
 	player1.printInfo();
 	player2.printInfo();
 
+	gameBoard.updateBoard(player1, player2);
+	gameBoard.printBoard();
 	gameBoard.printTileColor(1,1);
+
 	return 0;
 }
