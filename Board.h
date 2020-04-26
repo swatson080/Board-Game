@@ -9,6 +9,7 @@
 #define BOARD_H_
 
 #include "Tile.h"
+#include "Player.h"
 //#include <iostream>
 
 class Board {
@@ -20,7 +21,9 @@ public:
 	virtual ~Board();
 
 	void initBoard();
-	void printTileColor(int x, int y);
+	void updateBoard(Player& player1, Player& player2);    // Will need to add more to this function to update other game objects
+	void printTileColor(int x, int y);		// TEST FUNCTION
+	void printBoard();
 
 private:
 	Tile** board;
