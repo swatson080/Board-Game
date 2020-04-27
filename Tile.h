@@ -28,6 +28,8 @@ public:
 	void setFill(std::string f);
 
 	bool isEmpty();
+	void setEmptyFalse();
+	void setEmptyTrue();
 
 private:
 	const std::string tileLeft = "[";
