@@ -20,8 +20,9 @@ public:
 	Board();
 	virtual ~Board();
 
-	void initBoard();
+	void initBoard(Player& player1, Player& player2, int campfires);
 	void updateBoard(Player& player1, Player& player2);    // Will need to add more to this function to update other game objects
+
 	void printTileColor(int x, int y);		// TEST FUNCTION
 	void printBoard();
 

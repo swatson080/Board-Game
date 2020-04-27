@@ -62,3 +62,11 @@ void Tile::setFill(std::string f) {
 bool Tile::isEmpty() {
 	return empty;
 }
+
+void Tile::setEmptyFalse() {
+	empty = true;
+}
+
+void Tile::setEmptyTrue() {
+	empty = false;
+}

@@ -1,9 +1,6 @@
 //============================================================================
 // Name        : silvertip.cpp
 // Author      : stephen watson
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
 //============================================================================
 
 //TODO:
@@ -15,12 +12,26 @@
 // <iostream> is in Player.h
 // "Player.h" is in "Board.h"
 #include "Board.h"
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
 
-	Player player1("x",0,1), player2("o",14,0);
+	// Initialize rand() and generate random values for initBoard
+	srand(time(NULL));
+
+	// Player starting positions - not sure if this is the best way to do it though
+	int p1StartPos = rand() % 30;
+	int p2StartPos = rand() % 30 + 195;
+
+	int numCampfires = (rand() % 5) + 3;	// At least 3 campfires, and at most 7
+
+
+	Player player1("x",p1StartPos / 15, p1StartPos % 15), player2("o",p2StartPos / 15, p2StartPos % 15);
 	Board gameBoard;
-	gameBoard.initBoard();
+	gameBoard.initBoard(player1, player2, numCampfires);	// You only call this once, so pass it the two player objects, and let it set their positions like updateBoard does
+							// Don't forget to set the corresponding Tiles to empty = true
+							// And initialize the rest of the objects
 
 	player1.printInfo();
 	player2.printInfo();
