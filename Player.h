@@ -12,7 +12,7 @@
 
 class Player {
 public:
-	Player(std::string token, int x, int y);
+	Player(std::string token, int p);
 	virtual ~Player();
 
 	static short playerCount;
@@ -23,8 +23,9 @@ public:
 	long long getReputation();
 	long long getHealth();
 	long long getGold();
-	int getPosX();
-	int getPosY();
+	//int getPosX();
+	//int getPosY();
+	int getPos();
 	std::string getToken();
 	void printInfo();
 
@@ -36,8 +37,9 @@ private:
 	long long int health;
 	long long int gold;
 	std::string playerToken;
-	int posX;
-	int posY;
+	//int posX;
+	//int posY;
+	int pos;
 
 	// Will eventually have a pointer to *Card objects
 

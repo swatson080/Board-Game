@@ -9,7 +9,7 @@
 
 short Player::playerCount = 0;
 
-Player::Player(std::string token, int x, int y) : playerToken(token), posX(x), posY(y) {
+Player::Player(std::string token, int p) : playerToken(token), pos(p) {
 	++playerCount;
 	playerID = playerCount;
 	restPoints = 3;
@@ -39,12 +39,16 @@ long long Player::getGold() {
 	return gold;
 }
 
-int Player::getPosX() {
+/*int Player::getPosX() {
 	return posX;
 }
 
 int Player::getPosY() {
 	return posY;
+}*/
+
+int Player::getPos() {
+	return pos;
 }
 
 std::string Player::getToken() {

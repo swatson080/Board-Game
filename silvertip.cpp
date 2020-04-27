@@ -7,7 +7,7 @@
 // 	- Need to generate the game board with elements of the game
 //  - Need to create the deck class
 //  - Figure out how to make players move
-//  - Might need to take the position initialization out of the Player constructor, because it would be cleaner to do it in initBoard()
+//  - Figure out how to init campfires
 
 // <iostream> is in Player.h
 // "Player.h" is in "Board.h"
@@ -27,16 +27,14 @@ int main() {
 	int numCampfires = (rand() % 5) + 3;	// At least 3 campfires, and at most 7
 
 
-	Player player1("x",p1StartPos / 15, p1StartPos % 15), player2("o",p2StartPos / 15, p2StartPos % 15);
+	Player player1("x", p1StartPos), player2("o", p2StartPos);
 	Board gameBoard;
-	gameBoard.initBoard(player1, player2, numCampfires);	// You only call this once, so pass it the two player objects, and let it set their positions like updateBoard does
-							// Don't forget to set the corresponding Tiles to empty = true
-							// And initialize the rest of the objects
+	gameBoard.initBoard(player1, player2, numCampfires);	// Initialize the rest of the objects
 
 	player1.printInfo();
 	player2.printInfo();
 
-	gameBoard.updateBoard(player1, player2);
+	//gameBoard.updateBoard(player1, player2);
 	gameBoard.printBoard();
 	gameBoard.printTileColor(1,1);
 
