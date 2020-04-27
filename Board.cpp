@@ -25,34 +25,29 @@ void Board::initBoard(Player& player1, Player& player2, int campfires) {
 		board[i] = new Tile(1);
 	}
 
-	int i = player1.getPosX();
-	int j = player1.getPosY();
+	int p1 = player1.getPos();
+	int p2 = player2.getPos();
 
-	board[(i * 15) + j]->setFill(player1.getToken());
-	board[(i * 15) + j]->setEmptyFalse();
+	board[p1]->setFill(player1.getToken());
+	board[p1]->setEmptyFalse();
 
-	i = player2.getPosX();
-	j = player2.getPosY();
-
-	board[(i * 15) + j]->setFill(player2.getToken());
-	board[(i * 15) + j]->setEmptyFalse();
+	board[p2]->setFill(player2.getToken());
+	board[p2]->setEmptyFalse();
 
 
 }
 
 // Below function needs a companion function that will setEmptyTrue() on squares, when players move out of those squares
 void Board::updateBoard(Player& player1, Player& player2) {		// This function can overrun array bounds, so need to fix it at some point
-	int i = player1.getPosX();
-	int j = player1.getPosY();
 
-	board[(i * 15) + j]->setFill(player1.getToken());			// Don't need all of this, ONLY in the print function - just replace with one variable for playerPos
-	board[(i * 15) + j]->setEmptyFalse();
+	int p1 = player1.getPos();
+	int p2 = player2.getPos();
 
-	i = player2.getPosX();
-	j = player2.getPosY();
+	board[p1]->setFill(player1.getToken());
+	board[p1]->setEmptyFalse();
 
-	board[(i * 15) + j]->setFill(player2.getToken());
-	board[(i * 15) + j]->setEmptyFalse();
+	board[p2]->setFill(player2.getToken());
+	board[p2]->setEmptyFalse();
 
 }
 
